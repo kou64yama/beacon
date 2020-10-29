@@ -4,6 +4,8 @@
 
 A simple beacon server.
 
+![demo](https://user-images.githubusercontent.com/1706782/97574698-f1a6f280-1a2e-11eb-9b6f-2894ba656a81.gif)
+
 ## Requirements
 
 Beacon requires the following to run:
