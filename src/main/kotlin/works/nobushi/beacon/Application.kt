@@ -13,5 +13,6 @@ class Application {
 }
 
 fun main(args: Array<String>) {
+    @Suppress("SpreadOperator")
     runApplication<Application>(*args)
 }

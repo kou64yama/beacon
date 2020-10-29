@@ -4,6 +4,9 @@ buildscript {
     configurations.classpath {
         resolutionStrategy.activateDependencyLocking()
     }
+    repositories {
+        jcenter()
+    }
 }
 
 plugins {
@@ -14,6 +17,7 @@ plugins {
     id("org.springframework.boot") version "2.3.4.RELEASE"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
     id("org.jlleitschuh.gradle.ktlint") version "9.4.1"
+    id("io.gitlab.arturbosch.detekt") version "1.14.2"
 }
 
 dependencyLocking {
@@ -24,7 +28,7 @@ group = "works.nobushi"
 version = "0.1.0-SNAPSHOT"
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 springBoot {
