@@ -11,6 +11,7 @@ buildscript {
 
 plugins {
     application
+    jacoco
     kotlin("jvm") version "1.4.10"
     kotlin("kapt") version "1.4.10"
     kotlin("plugin.spring") version "1.4.10"
@@ -52,6 +53,7 @@ dependencies {
         exclude(group = "org.mockito", module = "mockito-core")
     }
     testImplementation("com.ninja-squad:springmockk:2.0.3")
+    testImplementation("io.projectreactor:reactor-test")
 }
 
 tasks {
@@ -60,7 +62,26 @@ tasks {
     }
 
     test {
+        finalizedBy(jacocoTestReport)
         useJUnitPlatform()
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.isEnabled = System.getenv("CI") == "true"
+        }
+    }
+
+    jacocoTestCoverageVerification {
+        violationRules {
+            rule {
+                element = "METHOD"
+                limit {
+                    minimum = 1.toBigDecimal()
+                    excludes = listOf("works.nobushi.beacon.ApplicationKt.main(java.lang.String[])")
+                }
+            }
+        }
     }
 
     withType<KotlinCompile> {
