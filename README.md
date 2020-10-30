@@ -2,6 +2,7 @@
 
 [![build](https://github.com/kou64yama/beacon/workflows/build/badge.svg)](https://github.com/kou64yama/beacon/actions?query=workflow%3Abuild)
 [![codecov](https://codecov.io/gh/kou64yama/beacon/branch/main/graph/badge.svg?token=i9YDV23orl)](https://codecov.io/gh/kou64yama/beacon)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkou64yama%2Fbeacon.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkou64yama%2Fbeacon?ref=badge_shield)
 
 A simple beacon server.
 
@@ -42,3 +43,6 @@ $ rsc ws://localhost:7888/rsocket --route epoch --stream --take 3
 ## License
 
 Beacon is licensed under the [MIT](https://github.com/kou64yama/beacon/blob/main/LICENSE) license.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkou64yama%2Fbeacon.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkou64yama%2Fbeacon?ref=badge_large)
