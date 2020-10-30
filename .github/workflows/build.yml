@@ -23,6 +23,11 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Build with Gradle
         run: ./gradlew build
+      - uses: codecov/codecov-action@v1
+        with:
+          file: build/reports/jacoco/test/jacocoTestReport.xml
+      - name: Verify coverage
+        run: ./gradlew jacocoTestCoverageVerification
       - uses: actions/upload-artifact@v2
         with:
           name: Package

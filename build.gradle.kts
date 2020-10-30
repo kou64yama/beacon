@@ -66,6 +66,12 @@ tasks {
         useJUnitPlatform()
     }
 
+    jacocoTestReport {
+        reports {
+            xml.isEnabled = System.getenv("CI") == "true"
+        }
+    }
+
     jacocoTestCoverageVerification {
         violationRules {
             rule {
