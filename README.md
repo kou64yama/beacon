@@ -1,6 +1,7 @@
 # Beacon
 
 [![build](https://github.com/kou64yama/beacon/workflows/build/badge.svg)](https://github.com/kou64yama/beacon/actions?query=workflow%3Abuild)
+[![codecov](https://codecov.io/gh/kou64yama/beacon/branch/main/graph/badge.svg?token=i9YDV23orl)](https://codecov.io/gh/kou64yama/beacon)
 
 A simple beacon server.
 
