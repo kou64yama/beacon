@@ -10,9 +10,10 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.web.server.LocalServerPort
 import org.springframework.messaging.rsocket.RSocketRequester
 import org.springframework.messaging.rsocket.retrieveFlux
-import reactor.core.publisher.Flux
 import reactor.test.StepVerifier
 import java.net.URI
+import java.time.Clock
+import java.time.Instant
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class EpochBeaconIntegrationTests {
@@ -20,27 +21,30 @@ class EpochBeaconIntegrationTests {
     private lateinit var requester: RSocketRequester
 
     @MockkBean
-    private lateinit var service: EpochBeaconService
+    private lateinit var clock: Clock
 
     @BeforeEach
     fun setUp(
         @Autowired builder: RSocketRequester.Builder,
         @LocalServerPort port: Int
     ) {
-        requester = builder.connectWebSocket(URI.create("http://localhost:$port/rsocket")).block()!!
+        requester = builder.websocket(URI.create("http://localhost:$port/rsocket"))
     }
 
     @AfterEach
     fun tearDown() {
-        requester.rsocket().dispose()
+        requester.dispose()
     }
 
     @Test
     fun `Assert epoch`() {
+        var time = 0L
         every {
-            service.epoch()
+            clock.instant()
         } answers {
-            Flux.range(0, 10).map { Epoch(it.toLong() * 1000) }
+            val instant = Instant.ofEpochMilli(time)
+            time += 1000
+            instant
         }
 
         val result = requester.route("epoch").retrieveFlux<Epoch>().take(3)
