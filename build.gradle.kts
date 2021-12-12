@@ -17,7 +17,7 @@ plugins {
     kotlin("plugin.spring") version "1.6.0"
     id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
     id("io.gitlab.arturbosch.detekt") version "1.19.0"
-    id("org.springframework.boot") version "2.3.4.RELEASE"
+    id("org.springframework.boot") version "2.6.1"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
 }
 
