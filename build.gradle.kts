@@ -12,13 +12,13 @@ buildscript {
 plugins {
     application
     jacoco
-    kotlin("jvm") version "1.4.10"
-    kotlin("kapt") version "1.4.10"
-    kotlin("plugin.spring") version "1.4.10"
-    id("org.springframework.boot") version "2.3.4.RELEASE"
-    id("io.spring.dependency-management") version "1.0.10.RELEASE"
-    id("org.jlleitschuh.gradle.ktlint") version "9.4.1"
-    id("io.gitlab.arturbosch.detekt") version "1.14.2"
+    kotlin("jvm") version "1.6.0"
+    kotlin("kapt") version "1.6.0"
+    kotlin("plugin.spring") version "1.6.0"
+    id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
+    id("io.gitlab.arturbosch.detekt") version "1.19.0"
+    id("org.springframework.boot") version "2.6.1"
+    id("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
 
 dependencyLocking {
@@ -52,7 +52,7 @@ dependencies {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
         exclude(group = "org.mockito", module = "mockito-core")
     }
-    testImplementation("com.ninja-squad:springmockk:2.0.3")
+    testImplementation("com.ninja-squad:springmockk:3.0.1")
     testImplementation("io.projectreactor:reactor-test")
 }
 
