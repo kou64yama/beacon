@@ -52,7 +52,7 @@ dependencies {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
         exclude(group = "org.mockito", module = "mockito-core")
     }
-    testImplementation("com.ninja-squad:springmockk:2.0.3")
+    testImplementation("com.ninja-squad:springmockk:3.0.1")
     testImplementation("io.projectreactor:reactor-test")
 }
 
