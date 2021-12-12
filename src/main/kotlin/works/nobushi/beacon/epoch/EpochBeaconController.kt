@@ -11,7 +11,7 @@ class EpochBeaconController(
     private val service: EpochBeaconService
 ) {
 
-    @GetMapping("/epoch", produces = [MediaType.APPLICATION_STREAM_JSON_VALUE])
+    @GetMapping("/epoch", produces = [MediaType.APPLICATION_NDJSON_VALUE])
     @MessageMapping("epoch")
     fun epoch(): Flux<Epoch> = service.epoch()
 }
