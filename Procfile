@@ -1,1 +1,1 @@
-web: java -jar build/libs/beacon.jar
+web: java -Dserver.port=$PORT -jar build/libs/beacon.jar
