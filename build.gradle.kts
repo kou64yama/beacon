@@ -5,7 +5,7 @@ buildscript {
         resolutionStrategy.activateDependencyLocking()
     }
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -29,7 +29,7 @@ group = "works.nobushi"
 version = "0.1.0-SNAPSHOT"
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 springBoot {
@@ -68,7 +68,7 @@ tasks {
 
     jacocoTestReport {
         reports {
-            xml.isEnabled = System.getenv("CI") == "true"
+            xml.required.set(System.getenv("CI") == "true")
         }
     }
 
