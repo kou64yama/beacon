@@ -5,7 +5,7 @@ buildscript {
         resolutionStrategy.activateDependencyLocking()
     }
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -29,7 +29,7 @@ group = "works.nobushi"
 version = "0.1.0-SNAPSHOT"
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 springBoot {
